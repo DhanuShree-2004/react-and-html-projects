@@ -1,0 +1,86 @@
+import React from "react";
+import ReactDOM from "react-dom";
+class Form extends React.Component {
+  constructor() {
+    super();
+    this.state = { username: "", age: null, errmsg: "" };
+  }
+  uservalue = (event) => {
+    let n = event.target.name;
+    let v = event.target.value;
+    let err = "";
+    if (n === "age") {
+      if (v != "" && !Number(v)) {
+        err = <strong>invalid,age must be number</strong>;
+      }
+    }
+    this.setState({ errmsg: err });
+    this.setState({ [n]: v });
+  };
+  formsubmit = (event) => {
+    alert("your name" + this.state.username);
+  };
+  render() {
+    return (
+      <form
+        style={{ color: "purple", textAlign: "center" }}
+        onSubmit={this.formsubmit}
+      >
+        <h1>DHANUAMAR TEAM{this.state.username}</h1>
+     
+
+        <div>
+          Select Your sport:<select>
+                            <option class="option" value="businessman">Food ball⚽</option>
+                           
+                            <option class="option" value="reporter">cricket🏏</option>
+                            <option class="option" value="reporter">Volleyball🏐</option>
+                            <option class="option" value="reporter">Kabaddi</option>
+                            <option class="option" value="reporter">Basketball🏀</option>
+                        </select>
+         
+        </div>
+        <br />
+        <div>
+          Enter Your Name:
+          <input type="text"  onChange={this.uservalue} />
+        </div>
+        <br />
+        <div>
+           Enter Your Age:
+          <input type="date" onChange={this.uservalue} />
+          <br />
+          <br />
+        </div>
+        <div>
+           Phone Number:
+          <input type="text" onChange={this.uservalue} />
+        </div>
+        <br />
+        <div>
+          Address:
+          <input type="text" onChange={this.uservalue} />
+          <br />
+          <br />
+          Fees:
+          <input type="text" onChange={this.uservalue} />
+          <br />
+          <br />
+        <div>
+           References:
+          <input type="number"  onChange={this.uservalue} />
+          <br />
+          <br />
+       
+          Total Amount to bepaide:
+          <input type="text" onChange={this.uservalue} />
+        </div>{" "}
+          <br />
+          {this.state.errmsg}
+          <input type="submit" name="sub" />
+        </div>
+      </form>
+    );
+  }
+}
+ReactDOM.render(<Form />, document.getElementById("root"));
