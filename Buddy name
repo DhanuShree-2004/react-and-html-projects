@@ -1,0 +1,44 @@
+import React,{ Component }from 'react';
+class App extends Component{
+  constructor(){
+    super();
+    this.state={
+        data:[
+            {"name":"Dhanushree   Dhanu"},
+            {"name":"Amaresh      Amar"},
+            {"name":"Ishanna      Ishu"},
+            {"name":"Ramya        Ram"},
+            {"name":"Jessica      jessi"},
+        ]};
+    }
+    render(){
+        return(
+        <div>
+            <Fruit/>
+            <ul>
+                {this.state.data.map((item)=><List data={item}/>)}
+               </ul>
+          </div>
+          );
+        }
+      }
+      class Fruit extends React.Component{
+          render(){
+              return(
+                <div>
+                <h1>Wellcome to Buddy club</h1>
+                <h2>this my friends and nick name</h2>
+                </div>
+              );
+          }
+      }
+      class List extends React.Component{
+          render(){
+              return(
+                  <ul>
+                      <li>{this.props.data.name}</li>
+                  </ul>
+              );
+          }
+      }
+      export default App;
