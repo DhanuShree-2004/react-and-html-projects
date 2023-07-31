@@ -1,0 +1,23 @@
+import React from "react";
+import ddhanu from "react-dom";
+import "./index.css";
+import App from"./App";
+
+class Demo{
+ methodone()
+{
+     var n= 934;
+    var sum=0;
+    var s= sum;
+    while (n!=0){
+        sum=Math.floor (sum+n%10);
+        n=n/10;
+
+   
+    document.getElementById('root').innerHTML=sum;
+    let s= Math.round(sum)
+}
+}
+}
+var mydemo=new Demo();
+mydemo.methodone();
