@@ -1,0 +1,19 @@
+import React from "react";
+import ddhanu from "react-dom";
+import "./index.css";
+import App from"./App";
+var n=()=>
+{
+    var a=55;
+    var x="divisible";
+    var y="not divisible";
+    if(a%11==0)
+    {
+    return(document.getElementById('root').innerHTML=x)
+}
+else{
+    return(document.getElementById('root').innerHTML=y)
+}
+}
+
+n();
